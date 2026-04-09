@@ -15,16 +15,9 @@ const app = express();
 
 // ✅ Improved CORS Configuration
 app.use(cors({
-  origin: [
-    "https://jobvista-two.vercel.app",   // ← Your Vercel URL
-    "https://jobvista-*.vercel.app",     // ← Allows all Vercel previews
-    "http://localhost:5173",
-    "http://localhost:3000"
-  ],
+  origin: "*", 
   credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
-  exposedHeaders: ["Content-Length", "X-Requested-With"]
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
 }));
 
 app.use(express.json());
